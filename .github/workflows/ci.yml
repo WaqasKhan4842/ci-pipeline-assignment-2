@@ -44,7 +44,7 @@ jobs:
       - name: Upload the test output
         uses: actions/upload-artifact@v4
         with:
-          test-results-${{ matrix.os }}-node${{ matrix.node }}
+          name: test-results-${{ matrix.os }}-node${{ matrix.node }}
           path: test-output.txt
 
 
