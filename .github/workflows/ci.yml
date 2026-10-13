@@ -39,12 +39,12 @@ jobs:
         run: npm ci
  
       - name: Run the tests and save the output
-        run: npm test > test-output.txt
+        run: npm test > test-output-${{ matrix.os }}-node${{ matrix.node }}.txt
  
       - name: Upload the test output
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
+          test-results-${{ matrix.os }}-node${{ matrix.node }}
           path: test-output.txt
 
 
